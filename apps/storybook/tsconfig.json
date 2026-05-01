@@ -1,0 +1,9 @@
+{
+  "extends": "@ji-design/typescript-config/react-library.json",
+  "compilerOptions": {
+    "allowImportingTsExtensions": true,
+    "noEmit": true
+  },
+  "include": [".storybook", "stories"],
+  "exclude": ["node_modules", "storybook-static"]
+}

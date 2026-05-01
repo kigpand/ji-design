@@ -1,0 +1,31 @@
+@import "./reset.css";
+@import "./variables.css";
+
+.ji-button {
+  align-items: center;
+  border-radius: var(--ji-radius-md);
+  border: 1px solid transparent;
+  cursor: pointer;
+  display: inline-flex;
+  font: inherit;
+  font-weight: 600;
+  gap: var(--ji-space-2);
+  min-height: 40px;
+  padding: 0 var(--ji-space-4);
+}
+
+.ji-button--solid {
+  background: var(--ji-color-primary);
+  color: var(--ji-color-primary-foreground);
+}
+
+.ji-button--outline {
+  background: var(--ji-color-background);
+  border-color: var(--ji-color-border);
+  color: var(--ji-color-foreground);
+}
+
+.ji-button--ghost {
+  background: transparent;
+  color: var(--ji-color-foreground);
+}

@@ -1,4 +1,3 @@
 import { config } from "@ji-design/eslint-config/react-internal";
 
-/** @type {import("eslint").Linter.Config} */
 export default config;

@@ -1,0 +1,31 @@
+{
+  "name": "storybook",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "storybook": "storybook dev -p 6006",
+    "dev": "storybook dev -p 6006",
+    "build": "storybook build",
+    "lint": "eslint . --max-warnings 0",
+    "check-types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@ji-design/styles": "workspace:*",
+    "@ji-design/ui": "workspace:*",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@ji-design/eslint-config": "workspace:*",
+    "@ji-design/typescript-config": "workspace:*",
+    "@storybook/addon-docs": "^10.3.3",
+    "@storybook/react-vite": "^10.3.3",
+    "@types/react": "19.2.2",
+    "@types/react-dom": "19.2.2",
+    "eslint": "^9.39.1",
+    "storybook": "^10.3.3",
+    "typescript": "5.9.2",
+    "vite": "^7.2.0"
+  }
+}

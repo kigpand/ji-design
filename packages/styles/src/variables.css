@@ -1,0 +1,15 @@
+:root {
+  --ji-color-background: #ffffff;
+  --ji-color-foreground: #171717;
+  --ji-color-primary: #2563eb;
+  --ji-color-primary-foreground: #ffffff;
+  --ji-color-border: #d4d4d8;
+  --ji-radius-sm: 4px;
+  --ji-radius-md: 6px;
+  --ji-radius-lg: 8px;
+  --ji-space-1: 4px;
+  --ji-space-2: 8px;
+  --ji-space-3: 12px;
+  --ji-space-4: 16px;
+  --ji-space-6: 24px;
+}

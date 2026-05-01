@@ -1,0 +1,31 @@
+{
+  "name": "playground",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "vite --port 3000",
+    "build": "tsc --noEmit && vite build",
+    "start": "vite preview --port 3000",
+    "lint": "eslint . --max-warnings 0",
+    "check-types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@ji-design/icons": "workspace:*",
+    "@ji-design/styles": "workspace:*",
+    "@ji-design/ui": "workspace:*",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@ji-design/eslint-config": "workspace:*",
+    "@ji-design/typescript-config": "workspace:*",
+    "@vitejs/plugin-react": "^5.1.2",
+    "@types/node": "^22.15.3",
+    "@types/react": "19.2.2",
+    "@types/react-dom": "19.2.2",
+    "eslint": "^9.39.1",
+    "typescript": "5.9.2",
+    "vite": "^7.2.0"
+  }
+}

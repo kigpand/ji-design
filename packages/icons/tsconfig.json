@@ -1,9 +1,8 @@
 {
   "extends": "@ji-design/typescript-config/react-library.json",
   "compilerOptions": {
-    "rootDir": "src",
-    "outDir": "dist",
-    "strictNullChecks": true
+    "rootDir": "./src",
+    "outDir": "dist"
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist"]
