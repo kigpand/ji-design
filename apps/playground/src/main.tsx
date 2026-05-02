@@ -1,4 +1,5 @@
 import "@ji-design/styles";
+import "@ji-design/ui/styles.css";
 import "./styles.css";
 
 import { StrictMode } from "react";
@@ -15,5 +16,5 @@ if (!rootElement) {
 createRoot(rootElement).render(
   <StrictMode>
     <App />
-  </StrictMode>
+  </StrictMode>,
 );

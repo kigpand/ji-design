@@ -1,3 +1,19 @@
+/* Tailwind v4 — preflight은 @layer base에 들어가므로 unlayered인 @ji-design/styles reset이 우선함 */
+@import "tailwindcss";
+
+/* Bridge Ji Design tokens into Tailwind's theme so utilities like
+   bg-primary, text-foreground, rounded-md reference the same CSS variables */
+@theme inline {
+  --color-background: var(--ji-color-background);
+  --color-foreground: var(--ji-color-foreground);
+  --color-primary: var(--ji-color-primary);
+  --color-primary-foreground: var(--ji-color-primary-foreground);
+  --color-border: var(--ji-color-border);
+  --radius-sm: var(--ji-radius-sm);
+  --radius-md: var(--ji-radius-md);
+  --radius-lg: var(--ji-radius-lg);
+}
+
 body {
   background: #f4f4f5;
   color: var(--ji-color-foreground);

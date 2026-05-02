@@ -20,11 +20,13 @@
   "devDependencies": {
     "@ji-design/eslint-config": "workspace:*",
     "@ji-design/typescript-config": "workspace:*",
+    "@tailwindcss/vite": "^4.1.0",
     "@vitejs/plugin-react": "^5.1.2",
     "@types/node": "^22.15.3",
     "@types/react": "19.2.2",
     "@types/react-dom": "19.2.2",
     "eslint": "^9.39.1",
+    "tailwindcss": "^4.1.0",
     "typescript": "5.9.2",
     "vite": "^7.2.0"
   }
