@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm lint)",
+      "Bash(pnpm check-types)",
+      "Bash(pnpm build)",
+      "Bash(pnpm storybook)",
+      "Bash(pnpm --filter playground lint)",
+      "Bash(pnpm --filter playground check-types)",
+      "Bash(pnpm --filter playground build)",
+      "Bash(pnpm --filter playground dev)",
+      "Bash(pnpm --filter @ji-design/ui lint)",
+      "Bash(pnpm --filter @ji-design/ui check-types)",
+      "Bash(git status)",
+      "Bash(git diff)"
+    ],
+    "deny": [
+      "Bash(git reset --hard)",
+      "Bash(git checkout --)",
+      "Bash(rm -rf /)"
+    ]
+  }
+}
