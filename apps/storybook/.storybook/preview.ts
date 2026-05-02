@@ -1,4 +1,5 @@
 import "@ji-design/styles";
+import "@ji-design/ui/styles.css";
 
 import type { Preview } from "@storybook/react-vite";
 

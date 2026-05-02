@@ -1,0 +1,29 @@
+@layer components {
+  .ji-input {
+    background: var(--ji-color-background);
+    border: 1px solid var(--ji-color-border);
+    border-radius: var(--ji-radius-md);
+    color: var(--ji-color-foreground);
+    display: block;
+    font: inherit;
+    font-size: var(--ji-font-size-md);
+    min-height: 40px;
+    padding: 0 var(--ji-space-3);
+    width: 100%;
+  }
+
+  .ji-input::placeholder {
+    color: var(--ji-color-foreground);
+    opacity: 0.4;
+  }
+
+  .ji-input:focus-visible {
+    outline: 2px solid var(--ji-color-primary);
+    outline-offset: 2px;
+  }
+
+  .ji-input:disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+  }
+}
