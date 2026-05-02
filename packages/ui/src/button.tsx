@@ -2,13 +2,13 @@ import type { ButtonHTMLAttributes, ReactNode } from "react";
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
-  variant?: "solid" | "outline" | "ghost";
+  variant?: "primary" | "outline" | "ghost";
 }
 
 export function Button({
   children,
   className,
-  variant = "solid",
+  variant = "primary",
   type = "button",
   ...props
 }: ButtonProps) {

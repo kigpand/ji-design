@@ -16,7 +16,7 @@ export function App() {
         <div className="preview">
           <Button>
             <CheckIcon />
-            Solid
+            Primary
           </Button>
           <Button variant="outline">Outline</Button>
           <Button variant="ghost">Ghost</Button>

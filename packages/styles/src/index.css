@@ -14,7 +14,7 @@
   padding: 0 var(--ji-space-4);
 }
 
-.ji-button--solid {
+.ji-button--primary {
   background: var(--ji-color-primary);
   color: var(--ji-color-primary-foreground);
 }
