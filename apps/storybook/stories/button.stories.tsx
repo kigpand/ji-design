@@ -15,19 +15,39 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
-  args: {
-    variant: "primary"
-  }
+  args: { variant: "primary" }
 };
 
 export const Outline: Story = {
-  args: {
-    variant: "outline"
-  }
+  args: { variant: "outline" }
 };
 
 export const Ghost: Story = {
-  args: {
-    variant: "ghost"
-  }
+  args: { variant: "ghost" }
+};
+
+export const Small: Story = {
+  args: { size: "sm" }
+};
+
+export const Medium: Story = {
+  args: { size: "md" }
+};
+
+export const Large: Story = {
+  args: { size: "lg" }
+};
+
+export const Sizes: Story = {
+  render: () => (
+    <div style={{ alignItems: "center", display: "flex", gap: 12 }}>
+      <Button size="sm">Small</Button>
+      <Button size="md">Medium</Button>
+      <Button size="lg">Large</Button>
+    </div>
+  )
+};
+
+export const Disabled: Story = {
+  args: { disabled: true }
 };

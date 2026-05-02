@@ -3,8 +3,10 @@
   --ji-color-background: #ffffff;
   --ji-color-foreground: #171717;
   --ji-color-primary: #2563eb;
+  --ji-color-primary-hover: #1d4ed8;
   --ji-color-primary-foreground: #ffffff;
   --ji-color-border: #d4d4d8;
+  --ji-color-surface-hover: #f4f4f5;
 
   /* space */
   --ji-space-1: 4px;
@@ -18,7 +20,7 @@
   --ji-radius-md: 6px;
   --ji-radius-lg: 8px;
 
-  /* font */
+  /* typography */
   --ji-font-sans: ui-sans-serif, system-ui, sans-serif;
   --ji-font-size-sm: 14px;
   --ji-font-size-md: 16px;

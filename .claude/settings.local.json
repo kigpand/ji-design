@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(pnpm --filter @ji-design/styles check-types)"
+      "Bash(pnpm --filter @ji-design/styles check-types)",
+      "Bash(pnpm --filter storybook check-types)",
+      "Bash(pnpm --filter storybook lint)"
     ]
   }
 }

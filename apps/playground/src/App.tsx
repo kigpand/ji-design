@@ -21,6 +21,12 @@ export function App() {
           <Button variant="outline">Outline</Button>
           <Button variant="ghost">Ghost</Button>
         </div>
+
+        <div className="preview">
+          <Button size="sm">Small</Button>
+          <Button size="md">Medium</Button>
+          <Button size="lg">Large</Button>
+        </div>
       </section>
     </main>
   );
