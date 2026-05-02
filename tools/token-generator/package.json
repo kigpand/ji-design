@@ -7,9 +7,6 @@
     "lint": "eslint . --max-warnings 0",
     "check-types": "tsc --noEmit"
   },
-  "dependencies": {
-    "@ji-design/core": "workspace:*"
-  },
   "devDependencies": {
     "@ji-design/eslint-config": "workspace:*",
     "@ji-design/typescript-config": "workspace:*",

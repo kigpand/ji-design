@@ -110,21 +110,6 @@ importers:
         specifier: ^7.2.0
         version: 7.3.2(@types/node@22.15.3)
 
-  packages/core:
-    devDependencies:
-      '@ji-design/eslint-config':
-        specifier: workspace:*
-        version: link:../eslint-config
-      '@ji-design/typescript-config':
-        specifier: workspace:*
-        version: link:../typescript-config
-      eslint:
-        specifier: ^9.39.1
-        version: 9.39.1
-      typescript:
-        specifier: 5.9.2
-        version: 5.9.2
-
   packages/eslint-config:
     devDependencies:
       '@eslint/js':
@@ -231,9 +216,6 @@ importers:
         specifier: ^19.2.0
         version: 19.2.0(react@19.2.0)
     devDependencies:
-      '@ji-design/core':
-        specifier: workspace:*
-        version: link:../core
       '@ji-design/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config
@@ -281,10 +263,6 @@ importers:
         version: 5.9.2
 
   tools/token-generator:
-    dependencies:
-      '@ji-design/core':
-        specifier: workspace:*
-        version: link:../../packages/core
     devDependencies:
       '@ji-design/eslint-config':
         specifier: workspace:*

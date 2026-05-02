@@ -12,7 +12,6 @@
     "check-types": "tsc --noEmit"
   },
   "devDependencies": {
-    "@ji-design/core": "workspace:*",
     "@ji-design/eslint-config": "workspace:*",
     "@ji-design/hooks": "workspace:*",
     "@ji-design/styles": "workspace:*",

@@ -1,5 +1,5 @@
-import { tokens } from "@ji-design/core";
-
 export function getTokenJson() {
-  return JSON.stringify(tokens, null, 2);
+  throw new Error(
+    "Token generation is not implemented. Runtime tokens currently live in @ji-design/styles CSS variables."
+  );
 }

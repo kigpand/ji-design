@@ -10,7 +10,6 @@ apps/
   playground/     # real app usage checks
 
 packages/
-  core/           # tokens, theme primitives, shared types
   ui/             # React components
   hooks/          # shared React hooks
   styles/         # reset, CSS variables, global styles
