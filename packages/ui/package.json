@@ -6,6 +6,9 @@
   "exports": {
     ".": "./src/index.ts",
     "./button": "./src/button.tsx",
+    "./input": "./src/input.tsx",
+    "./label": "./src/label.tsx",
+    "./textarea": "./src/textarea.tsx",
     "./styles.css": "./src/styles.css"
   },
   "scripts": {

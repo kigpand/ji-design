@@ -1,0 +1,9 @@
+@layer components {
+  .ji-label {
+    color: var(--ji-color-foreground);
+    display: block;
+    font-size: var(--ji-font-size-sm);
+    font-weight: var(--ji-font-weight-semibold);
+    line-height: var(--ji-line-height-normal);
+  }
+}
