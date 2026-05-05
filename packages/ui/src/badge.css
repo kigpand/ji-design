@@ -1,0 +1,33 @@
+@layer components {
+  .ji-badge {
+    align-items: center;
+    border: 1px solid transparent;
+    border-radius: var(--ji-radius-sm);
+    display: inline-flex;
+    font-size: var(--ji-font-size-sm);
+    font-weight: var(--ji-font-weight-semibold);
+    line-height: 1;
+    padding: var(--ji-space-1) var(--ji-space-2);
+    white-space: nowrap;
+  }
+
+  .ji-badge--primary {
+    background: var(--ji-color-primary);
+    color: var(--ji-color-primary-foreground);
+  }
+
+  .ji-badge--secondary {
+    background: var(--ji-color-muted);
+    color: var(--ji-color-muted-foreground);
+  }
+
+  .ji-badge--destructive {
+    background: var(--ji-color-destructive);
+    color: var(--ji-color-destructive-foreground);
+  }
+
+  .ji-badge--outline {
+    border-color: var(--ji-color-border);
+    color: var(--ji-color-foreground);
+  }
+}

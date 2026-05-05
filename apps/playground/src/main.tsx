@@ -1,6 +1,6 @@
 import "@ji-design/styles";
-import "@ji-design/ui/styles.css";
 import "./styles.css";
+import "@ji-design/ui/styles.css";
 
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";

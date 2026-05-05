@@ -7,6 +7,22 @@
   --ji-color-primary-foreground: #ffffff;
   --ji-color-border: #d4d4d8;
   --ji-color-surface-hover: #f4f4f5;
+  --ji-color-muted: #f4f4f5;
+  --ji-color-muted-foreground: #71717a;
+  --ji-color-destructive: #dc2626;
+  --ji-color-destructive-foreground: #ffffff;
+  --ji-color-destructive-surface: #fef2f2;
+  --ji-color-destructive-border: #fecaca;
+  --ji-color-success: #16a34a;
+  --ji-color-success-foreground: #ffffff;
+  --ji-color-success-surface: #f0fdf4;
+  --ji-color-success-border: #bbf7d0;
+  --ji-color-warning: #d97706;
+  --ji-color-warning-foreground: #ffffff;
+  --ji-color-warning-surface: #fffbeb;
+  --ji-color-warning-border: #fde68a;
+  --ji-color-info-surface: #eff6ff;
+  --ji-color-info-border: #bfdbfe;
 
   /* space */
   --ji-space-1: 4px;
