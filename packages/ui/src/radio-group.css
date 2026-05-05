@@ -1,0 +1,18 @@
+@layer components {
+  .ji-radio-group {
+    border: none;
+    display: flex;
+    gap: var(--ji-space-2);
+    margin: 0;
+    padding: 0;
+  }
+
+  .ji-radio-group--vertical {
+    flex-direction: column;
+  }
+
+  .ji-radio-group--horizontal {
+    align-items: center;
+    flex-direction: row;
+  }
+}

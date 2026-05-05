@@ -1,5 +1,5 @@
 import { CheckIcon } from "@ji-design/icons";
-import { Button } from "@ji-design/ui";
+import { Button, Checkbox, Input, Label, Radio, RadioGroup, Textarea } from "@ji-design/ui";
 
 export function App() {
   return (
@@ -27,6 +27,53 @@ export function App() {
           <Button size="md">Medium</Button>
           <Button size="lg">Large</Button>
         </div>
+
+        <div className="flex flex-col gap-3 max-w-sm">
+          <div className="flex flex-col gap-1">
+            <Label htmlFor="name">이름</Label>
+            <Input id="name" placeholder="이름을 입력하세요" />
+          </div>
+          <div className="flex flex-col gap-1">
+            <Label htmlFor="name-disabled">비활성화</Label>
+            <Input id="name-disabled" placeholder="비활성화 상태" disabled />
+          </div>
+          <div className="flex flex-col gap-1">
+            <Label htmlFor="message">메시지</Label>
+            <Textarea id="message" placeholder="메시지를 입력하세요" />
+          </div>
+          <div className="flex flex-col gap-1">
+            <Label htmlFor="message-disabled">메시지 (비활성화)</Label>
+            <Textarea id="message-disabled" placeholder="비활성화 상태" disabled />
+          </div>
+        </div>
+
+        <div className="flex flex-col gap-2">
+          <Label style={{ alignItems: "center", display: "flex", gap: 8 }}>
+            <Checkbox defaultChecked />
+            이용약관에 동의합니다
+          </Label>
+          <Label style={{ alignItems: "center", display: "flex", gap: 8 }}>
+            <Checkbox disabled />
+            비활성화 체크박스
+          </Label>
+        </div>
+
+        <RadioGroup aria-label="배송 방법">
+          <Label style={{ alignItems: "center", display: "flex", gap: 8 }}>
+            <Radio name="delivery" value="standard" defaultChecked />
+            일반 배송
+          </Label>
+          <Label style={{ alignItems: "center", display: "flex", gap: 8 }}>
+            <Radio name="delivery" value="express" />
+            빠른 배송
+          </Label>
+          <Label style={{ alignItems: "center", display: "flex", gap: 8 }}>
+            <Radio name="delivery" value="pickup" disabled />
+            직접 수령 (비활성화)
+          </Label>
+        </RadioGroup>
+
+        <Button>전송</Button>
       </section>
     </main>
   );

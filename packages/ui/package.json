@@ -6,8 +6,11 @@
   "exports": {
     ".": "./src/index.ts",
     "./button": "./src/button.tsx",
+    "./checkbox": "./src/checkbox.tsx",
     "./input": "./src/input.tsx",
     "./label": "./src/label.tsx",
+    "./radio": "./src/radio.tsx",
+    "./radio-group": "./src/radio-group.tsx",
     "./textarea": "./src/textarea.tsx",
     "./styles.css": "./src/styles.css"
   },

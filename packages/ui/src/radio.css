@@ -1,0 +1,49 @@
+@layer components {
+  .ji-radio {
+    appearance: none;
+    background: var(--ji-color-background);
+    border: 1px solid var(--ji-color-border);
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-grid;
+    flex-shrink: 0;
+    height: 16px;
+    place-content: center;
+    transition: background-color 150ms, border-color 150ms;
+    width: 16px;
+  }
+
+  .ji-radio::before {
+    background: var(--ji-color-primary-foreground);
+    border-radius: 50%;
+    content: "";
+    height: 8px;
+    transform: scale(0);
+    transition: transform 100ms;
+    width: 8px;
+  }
+
+  .ji-radio:checked {
+    background: var(--ji-color-primary);
+    border-color: var(--ji-color-primary);
+  }
+
+  .ji-radio:checked::before {
+    transform: scale(1);
+  }
+
+  .ji-radio:focus-visible {
+    outline: 2px solid var(--ji-color-primary);
+    outline-offset: 2px;
+  }
+
+  .ji-radio:disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+  }
+
+  .ji-radio:invalid,
+  .ji-radio[aria-invalid="true"] {
+    border-color: #dc2626;
+  }
+}
