@@ -17,6 +17,9 @@ import {
   Radio,
   RadioGroup,
   Select,
+  Separator,
+  Skeleton,
+  Spinner,
   Textarea,
 } from "@ji-design/ui";
 
@@ -153,6 +156,48 @@ export function App() {
             <Button>로그인</Button>
           </CardFooter>
         </Card>
+
+        <Separator />
+
+        {/* Skeleton */}
+        <Card className="max-w-sm">
+          <CardHeader>
+            <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
+              <Skeleton variant="circle" />
+              <div className="flex flex-col gap-1" style={{ flex: 1 }}>
+                <Skeleton variant="text" style={{ width: "60%" }} />
+                <Skeleton variant="text" style={{ width: "40%" }} />
+              </div>
+            </div>
+          </CardHeader>
+          <CardContent>
+            <div className="flex flex-col gap-2">
+              <Skeleton style={{ height: 16 }} />
+              <Skeleton style={{ height: 16 }} />
+              <Skeleton style={{ height: 16, width: "70%" }} />
+            </div>
+          </CardContent>
+        </Card>
+
+        <Separator />
+
+        {/* Spinner */}
+        <div className="preview">
+          <Spinner size="sm" />
+          <Spinner size="md" />
+          <Spinner size="lg" />
+        </div>
+
+        <div className="preview">
+          <Button disabled>
+            <Spinner size="sm" />
+            저장 중...
+          </Button>
+          <Button variant="outline" disabled>
+            <Spinner size="sm" />
+            불러오는 중...
+          </Button>
+        </div>
       </section>
     </main>
   );

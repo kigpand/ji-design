@@ -1,0 +1,19 @@
+@layer components {
+  .ji-separator {
+    background: var(--ji-color-border);
+    flex-shrink: 0;
+  }
+
+  .ji-separator--horizontal {
+    display: block;
+    height: 1px;
+    width: 100%;
+  }
+
+  .ji-separator--vertical {
+    align-self: stretch;
+    display: inline-block;
+    height: 100%;
+    width: 1px;
+  }
+}

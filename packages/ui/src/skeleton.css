@@ -1,0 +1,43 @@
+@layer components {
+  @keyframes ji-skeleton-pulse {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.4;
+    }
+  }
+
+  .ji-skeleton {
+    animation: ji-skeleton-pulse 1.5s ease-in-out infinite;
+    background: var(--ji-color-muted);
+  }
+
+  .ji-skeleton--rect {
+    border-radius: var(--ji-radius-md);
+    display: block;
+    height: 1rem;
+    width: 100%;
+  }
+
+  .ji-skeleton--text {
+    border-radius: var(--ji-radius-sm);
+    display: block;
+    height: 0.875rem;
+    width: 100%;
+  }
+
+  .ji-skeleton--circle {
+    border-radius: 9999px;
+    display: block;
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ji-skeleton {
+      animation: none;
+    }
+  }
+}

@@ -16,6 +16,9 @@
     "./radio-group": "./src/radio-group.tsx",
     "./select": "./src/select.tsx",
     "./textarea": "./src/textarea.tsx",
+    "./separator": "./src/separator.tsx",
+    "./skeleton": "./src/skeleton.tsx",
+    "./spinner": "./src/spinner.tsx",
     "./styles.css": "./src/styles.css"
   },
   "scripts": {

@@ -1,0 +1,57 @@
+@layer components {
+  @keyframes ji-spinner-rotate {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .ji-spinner {
+    align-items: center;
+    display: inline-flex;
+    gap: var(--ji-space-2);
+    vertical-align: middle;
+  }
+
+  .ji-spinner__icon {
+    border-color: currentColor;
+    border-style: solid;
+    border-radius: 9999px;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+    display: block;
+    flex-shrink: 0;
+    animation: ji-spinner-rotate 0.7s linear infinite;
+  }
+
+  .ji-spinner--sm .ji-spinner__icon {
+    border-width: 2px;
+    height: 14px;
+    width: 14px;
+  }
+
+  .ji-spinner--md .ji-spinner__icon {
+    border-width: 2px;
+    height: 20px;
+    width: 20px;
+  }
+
+  .ji-spinner--lg .ji-spinner__icon {
+    border-width: 3px;
+    height: 28px;
+    width: 28px;
+  }
+
+  .ji-spinner__label {
+    font-size: var(--ji-font-size-sm);
+    color: var(--ji-color-muted-foreground);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ji-spinner__icon {
+      animation: none;
+      border-bottom-color: currentColor;
+      border-right-color: currentColor;
+      opacity: 0.4;
+    }
+  }
+}
