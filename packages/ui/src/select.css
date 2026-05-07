@@ -1,35 +1,116 @@
 @layer components {
   .ji-select {
-    appearance: none;
-    background-color: var(--ji-color-background);
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath d='M4 6l4 4 4-4' stroke='%23737373' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-    background-position: right var(--ji-space-3) center;
-    background-repeat: no-repeat;
-    background-size: 16px 16px;
+    position: relative;
+    width: 100%;
+  }
+
+  .ji-select__trigger {
+    align-items: center;
+    background: var(--ji-color-background);
     border: 1px solid var(--ji-color-border);
     border-radius: var(--ji-radius-md);
     color: var(--ji-color-foreground);
     cursor: pointer;
-    display: block;
+    display: flex;
     font: inherit;
     font-size: var(--ji-font-size-md);
+    justify-content: space-between;
     min-height: 40px;
-    padding: 0 var(--ji-space-6) 0 var(--ji-space-3);
+    padding: 0 var(--ji-space-3);
+    text-align: left;
+    transition: border-color 150ms;
     width: 100%;
   }
 
-  .ji-select:focus-visible {
+  .ji-select__trigger:focus-visible {
     outline: 2px solid var(--ji-color-primary);
     outline-offset: 2px;
   }
 
-  .ji-select:disabled {
+  .ji-select--open .ji-select__trigger {
+    border-color: var(--ji-color-primary);
+    outline: 2px solid var(--ji-color-primary);
+    outline-offset: 2px;
+  }
+
+  .ji-select--disabled .ji-select__trigger {
     cursor: not-allowed;
     opacity: 0.4;
   }
 
-  .ji-select:invalid,
-  .ji-select[aria-invalid="true"] {
+  .ji-select--invalid .ji-select__trigger {
     border-color: var(--ji-color-destructive);
+  }
+
+  .ji-select__placeholder {
+    color: var(--ji-color-foreground);
+    flex: 1;
+    opacity: 0.4;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .ji-select__value {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .ji-select__chevron {
+    color: var(--ji-color-muted-foreground);
+    flex-shrink: 0;
+    margin-left: var(--ji-space-2);
+    transition: transform 150ms;
+  }
+
+  .ji-select--open .ji-select__chevron {
+    transform: rotate(180deg);
+  }
+
+  .ji-select__listbox {
+    background: var(--ji-color-background);
+    border: 1px solid var(--ji-color-border);
+    border-radius: var(--ji-radius-md);
+    box-shadow: var(--ji-shadow-md);
+    left: 0;
+    list-style: none;
+    margin: var(--ji-space-1) 0 0;
+    max-height: 240px;
+    overflow-y: auto;
+    padding: var(--ji-space-1);
+    position: absolute;
+    right: 0;
+    top: 100%;
+    z-index: 50;
+  }
+
+  .ji-select__option {
+    border-radius: var(--ji-radius-sm);
+    color: var(--ji-color-foreground);
+    cursor: pointer;
+    font-size: var(--ji-font-size-md);
+    padding: var(--ji-space-2) var(--ji-space-3);
+    user-select: none;
+  }
+
+  .ji-select__option--focused {
+    background: var(--ji-color-surface-hover);
+  }
+
+  .ji-select__option--selected {
+    color: var(--ji-color-primary);
+    font-weight: var(--ji-font-weight-semibold);
+  }
+
+  .ji-select__option--selected.ji-select__option--focused {
+    background: var(--ji-color-info-surface);
+  }
+
+  .ji-select__option--disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+    pointer-events: none;
   }
 }

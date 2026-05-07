@@ -31,6 +31,6 @@ export type { RadioProps } from "./radio";
 export { RadioGroup } from "./radio-group";
 export type { RadioGroupProps } from "./radio-group";
 export { Select } from "./select";
-export type { SelectProps } from "./select";
+export type { SelectOption, SelectProps } from "./select";
 export { Textarea } from "./textarea";
 export type { TextareaProps } from "./textarea";

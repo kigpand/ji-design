@@ -64,12 +64,15 @@ export function App() {
           </div>
           <div className="flex flex-col gap-1">
             <Label htmlFor="country">국가</Label>
-            <Select id="country">
-              <option value="">선택하세요</option>
-              <option value="kr">대한민국</option>
-              <option value="us">미국</option>
-              <option value="jp">일본</option>
-            </Select>
+            <Select
+              id="country"
+              options={[
+                { label: "대한민국", value: "kr" },
+                { label: "미국", value: "us" },
+                { label: "일본", value: "jp" },
+              ]}
+              placeholder="선택하세요"
+            />
           </div>
           <div className="flex flex-col gap-1">
             <Label htmlFor="message">메시지</Label>
