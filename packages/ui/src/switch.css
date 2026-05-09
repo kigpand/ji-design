@@ -1,0 +1,51 @@
+@layer components {
+  .ji-switch {
+    appearance: none;
+    background: var(--ji-color-border);
+    border-radius: 9999px;
+    cursor: pointer;
+    display: inline-block;
+    flex-shrink: 0;
+    height: 20px;
+    position: relative;
+    transition: background-color 150ms;
+    width: 36px;
+  }
+
+  .ji-switch::before {
+    background: var(--ji-color-background);
+    border-radius: 9999px;
+    box-shadow: var(--ji-shadow-sm);
+    content: "";
+    height: 16px;
+    left: 2px;
+    position: absolute;
+    top: 2px;
+    transition: transform 150ms;
+    width: 16px;
+  }
+
+  .ji-switch:checked {
+    background: var(--ji-color-primary);
+  }
+
+  .ji-switch:checked::before {
+    transform: translateX(16px);
+  }
+
+  .ji-switch:focus-visible {
+    outline: 2px solid var(--ji-color-primary);
+    outline-offset: 2px;
+  }
+
+  .ji-switch:disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+  }
+
+  .ji-switch:invalid,
+  .ji-switch[aria-invalid="true"] {
+    outline: 2px solid var(--ji-color-destructive);
+    outline-offset: 2px;
+  }
+}

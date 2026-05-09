@@ -20,6 +20,11 @@ import {
   Separator,
   Skeleton,
   Spinner,
+  Switch,
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
   Textarea,
 } from "@ji-design/ui";
 
@@ -178,6 +183,46 @@ export function App() {
             </div>
           </CardContent>
         </Card>
+
+        {/* Switch */}
+        <div className="flex flex-col gap-2">
+          <Label style={{ alignItems: "center", display: "flex", gap: 8 }}>
+            <Switch defaultChecked />
+            이메일 알림
+          </Label>
+          <Label style={{ alignItems: "center", display: "flex", gap: 8 }}>
+            <Switch />
+            푸시 알림
+          </Label>
+          <Label style={{ alignItems: "center", display: "flex", gap: 8 }}>
+            <Switch disabled />
+            마케팅 알림 (비활성화)
+          </Label>
+        </div>
+
+        <Separator />
+
+        {/* Tabs */}
+        <Tabs defaultValue="profile" className="max-w-sm">
+          <TabsList>
+            <TabsTrigger value="profile">프로필</TabsTrigger>
+            <TabsTrigger value="account">계정</TabsTrigger>
+            <TabsTrigger value="billing" disabled>결제</TabsTrigger>
+          </TabsList>
+          <TabsContent value="profile">
+            <div className="flex flex-col gap-1">
+              <Label htmlFor="display-name">표시 이름</Label>
+              <Input id="display-name" defaultValue="김지훈" />
+            </div>
+          </TabsContent>
+          <TabsContent value="account">
+            <div className="flex flex-col gap-1">
+              <Label htmlFor="current-password">현재 비밀번호</Label>
+              <Input id="current-password" type="password" />
+            </div>
+          </TabsContent>
+          <TabsContent value="billing">결제 정보입니다.</TabsContent>
+        </Tabs>
 
         <Separator />
 

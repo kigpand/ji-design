@@ -40,3 +40,12 @@ export { Skeleton } from "./skeleton";
 export type { SkeletonProps } from "./skeleton";
 export { Spinner } from "./spinner";
 export type { SpinnerProps } from "./spinner";
+export { Switch } from "./switch";
+export type { SwitchProps } from "./switch";
+export { Tabs, TabsContent, TabsList, TabsTrigger } from "./tabs";
+export type {
+  TabsContentProps,
+  TabsListProps,
+  TabsProps,
+  TabsTriggerProps,
+} from "./tabs";
