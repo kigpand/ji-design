@@ -3,17 +3,19 @@ import {
   useCallback,
   useContext,
   useId,
+  useRef,
   useState,
   type ButtonHTMLAttributes,
   type HTMLAttributes,
   type KeyboardEvent,
+  type MutableRefObject,
   type ReactNode,
 } from "react";
 
 interface TabsContextValue {
   activeValue: string;
   baseId: string;
-  onValueChange?: (value: string) => void;
+  firstEnabledValueRef: MutableRefObject<string>;
   orientation: "horizontal" | "vertical";
   setActiveValue: (value: string) => void;
 }
@@ -44,6 +46,7 @@ export function Tabs({
   ...props
 }: TabsProps) {
   const baseId = useId();
+  const firstEnabledValueRef = useRef("");
   const [internalValue, setInternalValue] = useState(defaultValue);
   const isControlled = value !== undefined;
   const activeValue = isControlled ? value : internalValue;
@@ -62,7 +65,7 @@ export function Tabs({
 
   return (
     <TabsContext.Provider
-      value={{ activeValue, baseId, onValueChange, orientation, setActiveValue }}
+      value={{ activeValue, baseId, firstEnabledValueRef, orientation, setActiveValue }}
     >
       <div className={classes} {...props}>
         {children}
@@ -80,6 +83,7 @@ export function TabsList({ className, onKeyDown, ...props }: TabsListProps) {
 
   const handleKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
     onKeyDown?.(e);
+    if (e.defaultPrevented) return;
 
     const triggers = Array.from(
       e.currentTarget.querySelectorAll<HTMLButtonElement>(
@@ -137,8 +141,17 @@ export function TabsTrigger({
   value,
   ...props
 }: TabsTriggerProps) {
-  const { activeValue, baseId, setActiveValue } = useTabsContext();
-  const isSelected = activeValue === value;
+  const { activeValue, baseId, firstEnabledValueRef, setActiveValue } =
+    useTabsContext();
+
+  // 렌더 순서 기준으로 첫 번째 비장애 trigger를 기록해 value가 없을 때도
+  // tablist에 항상 tabIndex=0인 요소가 하나 존재하도록 보장합니다.
+  if (!firstEnabledValueRef.current && !disabled) {
+    firstEnabledValueRef.current = value;
+  }
+
+  const effectiveActive = activeValue || firstEnabledValueRef.current;
+  const isSelected = effectiveActive === value;
 
   const classes = [
     "ji-tabs__trigger",
@@ -160,8 +173,8 @@ export function TabsTrigger({
       tabIndex={isSelected ? 0 : -1}
       disabled={disabled}
       onClick={(e) => {
-        if (!disabled) setActiveValue(value);
         onClick?.(e);
+        if (!e.defaultPrevented && !disabled) setActiveValue(value);
       }}
     />
   );
@@ -173,6 +186,7 @@ export interface TabsContentProps extends HTMLAttributes<HTMLDivElement> {
 
 export function TabsContent({
   className,
+  tabIndex = 0,
   value,
   ...props
 }: TabsContentProps) {
@@ -189,7 +203,7 @@ export function TabsContent({
       id={`${baseId}-panel-${value}`}
       aria-labelledby={`${baseId}-trigger-${value}`}
       hidden={!isActive}
-      tabIndex={0}
+      tabIndex={tabIndex}
     />
   );
 }

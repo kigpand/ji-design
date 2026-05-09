@@ -56,6 +56,7 @@ pnpm --filter @ji-design/ui check-types
 - `apps/playground`에 Next.js를 다시 도입하지 않습니다. 이 앱은 의도적으로 Vite React입니다.
 - 런타임 토큰의 기준은 `packages/styles/src/variables.css`의 CSS variables입니다.
 - React 컴포넌트는 일반적인 TypeScript와 JSX로 작성합니다. 필요 없는 추상화는 만들지 않습니다.
+- 코드 주석은 기본적으로 한글로 작성합니다. 외부 API 이름, 표준 용어, 에러 메시지처럼 원문 유지가 더 명확한 표현만 영어를 사용합니다.
 - 컴포넌트 variant 이름은 가능하면 표현 방식(`solid`)보다 의미(`primary`, `secondary`, `destructive`)를 우선합니다.
 - CSS는 소유하는 패키지나 앱 가까이에 둡니다. 재사용 토큰이나 global style일 때만 공유 패키지로 옮깁니다.
 - 디자인 시스템 색상, radius, primitive 값은 가능하면 `@ji-design/styles`의 CSS variables를 사용합니다.
