@@ -22,6 +22,30 @@ export type {
 } from "./card";
 export { Checkbox } from "./checkbox";
 export type { CheckboxProps } from "./checkbox";
+export {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogOverlay,
+  DialogPortal,
+  DialogTitle,
+  DialogTrigger,
+} from "./dialog";
+export type {
+  DialogCloseProps,
+  DialogContentProps,
+  DialogDescriptionProps,
+  DialogFooterProps,
+  DialogHeaderProps,
+  DialogOverlayProps,
+  DialogPortalProps,
+  DialogProps,
+  DialogTitleProps,
+  DialogTriggerProps,
+} from "./dialog";
 export { Input } from "./input";
 export type { InputProps } from "./input";
 export { Label } from "./label";

@@ -10,6 +10,7 @@
     "./button": "./src/button.tsx",
     "./card": "./src/card.tsx",
     "./checkbox": "./src/checkbox.tsx",
+    "./dialog": "./src/dialog.tsx",
     "./input": "./src/input.tsx",
     "./label": "./src/label.tsx",
     "./radio": "./src/radio.tsx",
@@ -39,6 +40,7 @@
     "typescript": "5.9.2"
   },
   "dependencies": {
+    "@radix-ui/react-dialog": "^1.1.4",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
   }

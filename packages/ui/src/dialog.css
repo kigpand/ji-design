@@ -1,0 +1,135 @@
+@layer components {
+  .ji-dialog__overlay {
+    background: rgb(0 0 0 / 0.5);
+    inset: 0;
+    position: fixed;
+    z-index: 50;
+  }
+
+  .ji-dialog__overlay[data-state="open"] {
+    animation: ji-dialog-overlay-in 150ms ease;
+  }
+
+  .ji-dialog__overlay[data-state="closed"] {
+    animation: ji-dialog-overlay-out 150ms ease;
+  }
+
+  .ji-dialog__content {
+    background: var(--ji-color-background);
+    border-radius: var(--ji-radius-lg);
+    box-shadow: var(--ji-shadow-lg);
+    left: 50%;
+    max-height: calc(100dvh - 2rem);
+    max-width: 32rem;
+    overflow-y: auto;
+    padding: var(--ji-space-6);
+    position: fixed;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100% - 2rem);
+    z-index: 50;
+  }
+
+  .ji-dialog__content[data-state="open"] {
+    animation: ji-dialog-content-in 150ms ease;
+  }
+
+  .ji-dialog__content[data-state="closed"] {
+    animation: ji-dialog-content-out 150ms ease;
+  }
+
+  .ji-dialog__header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--ji-space-2);
+    margin-bottom: var(--ji-space-4);
+    padding-right: var(--ji-space-6);
+  }
+
+  .ji-dialog__footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--ji-space-2);
+    justify-content: flex-end;
+    margin-top: var(--ji-space-6);
+  }
+
+  .ji-dialog__title {
+    color: var(--ji-color-foreground);
+    font-size: var(--ji-font-size-lg);
+    font-weight: var(--ji-font-weight-semibold);
+    line-height: var(--ji-line-height-normal);
+  }
+
+  .ji-dialog__description {
+    color: var(--ji-color-muted-foreground);
+    font-size: var(--ji-font-size-sm);
+    line-height: var(--ji-line-height-normal);
+  }
+
+  .ji-dialog__close {
+    align-items: center;
+    background: transparent;
+    border: none;
+    border-radius: var(--ji-radius-sm);
+    color: var(--ji-color-muted-foreground);
+    cursor: pointer;
+    display: inline-flex;
+    height: 24px;
+    justify-content: center;
+    padding: 0;
+    position: absolute;
+    right: var(--ji-space-4);
+    top: var(--ji-space-4);
+    transition: color 150ms;
+    width: 24px;
+  }
+
+  .ji-dialog__close:hover {
+    color: var(--ji-color-foreground);
+  }
+
+  .ji-dialog__close:focus-visible {
+    outline: 2px solid var(--ji-color-primary);
+    outline-offset: 2px;
+  }
+
+  @keyframes ji-dialog-overlay-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes ji-dialog-overlay-out {
+    from { opacity: 1; }
+    to { opacity: 0; }
+  }
+
+  @keyframes ji-dialog-content-in {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -48%) scale(0.96);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+
+  @keyframes ji-dialog-content-out {
+    from {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: translate(-50%, -48%) scale(0.96);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ji-dialog__overlay,
+    .ji-dialog__content {
+      animation: none;
+    }
+  }
+}

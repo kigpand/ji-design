@@ -12,6 +12,14 @@ import {
   CardHeader,
   CardTitle,
   Checkbox,
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
   Input,
   Label,
   Radio,
@@ -223,6 +231,44 @@ export function App() {
           </TabsContent>
           <TabsContent value="billing">결제 정보입니다.</TabsContent>
         </Tabs>
+
+        {/* Dialog */}
+        <div className="preview">
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button>프로필 수정</Button>
+            </DialogTrigger>
+            <DialogContent>
+              <DialogClose />
+              <DialogHeader>
+                <DialogTitle>프로필 수정</DialogTitle>
+                <DialogDescription>
+                  변경할 정보를 입력하고 저장하세요.
+                </DialogDescription>
+              </DialogHeader>
+              <div className="flex flex-col gap-3">
+                <div className="flex flex-col gap-1">
+                  <Label htmlFor="pg-dialog-name">이름</Label>
+                  <Input id="pg-dialog-name" defaultValue="김지훈" />
+                </div>
+                <div className="flex flex-col gap-1">
+                  <Label htmlFor="pg-dialog-email">이메일</Label>
+                  <Input
+                    id="pg-dialog-email"
+                    type="email"
+                    defaultValue="kigpand@gmail.com"
+                  />
+                </div>
+              </div>
+              <DialogFooter>
+                <DialogClose asChild>
+                  <Button variant="outline">취소</Button>
+                </DialogClose>
+                <Button>저장</Button>
+              </DialogFooter>
+            </DialogContent>
+          </Dialog>
+        </div>
 
         <Separator />
 
