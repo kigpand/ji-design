@@ -1,0 +1,55 @@
+@layer components {
+  .ji-tooltip__content {
+    background: var(--ji-color-foreground);
+    border-radius: var(--ji-radius-sm);
+    box-shadow: var(--ji-shadow-md);
+    color: var(--ji-color-background);
+    font-size: var(--ji-font-size-sm);
+    line-height: var(--ji-line-height-normal);
+    max-width: 18rem;
+    padding: var(--ji-space-1) var(--ji-space-2);
+    word-break: break-word;
+    z-index: 100;
+  }
+
+  .ji-tooltip__content[data-state="delayed-open"],
+  .ji-tooltip__content[data-state="instant-open"] {
+    animation: ji-tooltip-in 120ms ease;
+  }
+
+  .ji-tooltip__content[data-state="closed"] {
+    animation: ji-tooltip-out 100ms ease;
+  }
+
+  .ji-tooltip__arrow {
+    fill: var(--ji-color-foreground);
+  }
+
+  @keyframes ji-tooltip-in {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes ji-tooltip-out {
+    from {
+      opacity: 1;
+      transform: scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ji-tooltip__content {
+      animation: none;
+    }
+  }
+}

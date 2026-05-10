@@ -34,10 +34,16 @@ import {
   TabsList,
   TabsTrigger,
   Textarea,
+  Tooltip,
+  TooltipArrow,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
 } from "@ji-design/ui";
 
 export function App() {
   return (
+    <TooltipProvider>
     <main className="playground">
       <section className="surface">
         <div>
@@ -289,7 +295,45 @@ export function App() {
             불러오는 중...
           </Button>
         </div>
+
+        <Separator />
+
+        {/* Tooltip */}
+        <div className="preview">
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button variant="outline">저장</Button>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>저장 (Cmd + S)</p>
+              <TooltipArrow />
+            </TooltipContent>
+          </Tooltip>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button variant="ghost">삭제</Button>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>선택한 항목을 삭제합니다.</p>
+              <TooltipArrow />
+            </TooltipContent>
+          </Tooltip>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <span style={{ display: "inline-block" }}>
+                <Button disabled style={{ pointerEvents: "none" }}>
+                  게시
+                </Button>
+              </span>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>권한이 없어 사용할 수 없습니다.</p>
+              <TooltipArrow />
+            </TooltipContent>
+          </Tooltip>
+        </div>
       </section>
     </main>
+    </TooltipProvider>
   );
 }
