@@ -39,6 +39,14 @@ import {
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuShortcut,
+  DropdownMenuTrigger,
 } from "@ji-design/ui";
 
 export function App() {
@@ -331,6 +339,37 @@ export function App() {
               <TooltipArrow />
             </TooltipContent>
           </Tooltip>
+        </div>
+
+        <Separator />
+
+        {/* Dropdown Menu */}
+        <div className="preview">
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="outline">작업</Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              <DropdownMenuLabel>파일 작업</DropdownMenuLabel>
+              <DropdownMenuSeparator />
+              <DropdownMenuGroup>
+                <DropdownMenuItem>
+                  수정
+                  <DropdownMenuShortcut>⌘E</DropdownMenuShortcut>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  복제
+                  <DropdownMenuShortcut>⌘D</DropdownMenuShortcut>
+                </DropdownMenuItem>
+                <DropdownMenuItem disabled>보관</DropdownMenuItem>
+              </DropdownMenuGroup>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem variant="destructive">
+                삭제
+                <DropdownMenuShortcut>⌘⌫</DropdownMenuShortcut>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
       </section>
     </main>

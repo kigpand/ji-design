@@ -1,5 +1,39 @@
 export { Alert, AlertDescription, AlertTitle } from "./alert";
 export type { AlertDescriptionProps, AlertProps, AlertTitleProps } from "./alert";
+export {
+  DropdownMenu,
+  DropdownMenuCheckboxItem,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuLabel,
+  DropdownMenuItem,
+  DropdownMenuPortal,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
+  DropdownMenuSeparator,
+  DropdownMenuShortcut,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
+  DropdownMenuTrigger,
+} from "./dropdown-menu";
+export type {
+  DropdownMenuCheckboxItemProps,
+  DropdownMenuContentProps,
+  DropdownMenuGroupProps,
+  DropdownMenuItemProps,
+  DropdownMenuLabelProps,
+  DropdownMenuPortalProps,
+  DropdownMenuProps,
+  DropdownMenuRadioGroupProps,
+  DropdownMenuRadioItemProps,
+  DropdownMenuSeparatorProps,
+  DropdownMenuShortcutProps,
+  DropdownMenuSubContentProps,
+  DropdownMenuSubProps,
+  DropdownMenuSubTriggerProps,
+  DropdownMenuTriggerProps,
+} from "./dropdown-menu";
 export { Badge } from "./badge";
 export type { BadgeProps } from "./badge";
 export { Button } from "./button";

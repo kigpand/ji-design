@@ -11,6 +11,7 @@
     "./card": "./src/card.tsx",
     "./checkbox": "./src/checkbox.tsx",
     "./dialog": "./src/dialog.tsx",
+    "./dropdown-menu": "./src/dropdown-menu.tsx",
     "./input": "./src/input.tsx",
     "./label": "./src/label.tsx",
     "./radio": "./src/radio.tsx",
@@ -42,6 +43,7 @@
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.4",
+    "@radix-ui/react-dropdown-menu": "^2.1.4",
     "@radix-ui/react-tooltip": "^1.1.4",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
