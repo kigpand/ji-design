@@ -108,6 +108,24 @@ export type {
   TabsTriggerProps,
 } from "./tabs";
 export {
+  Popover,
+  PopoverAnchor,
+  PopoverArrow,
+  PopoverClose,
+  PopoverContent,
+  PopoverPortal,
+  PopoverTrigger,
+} from "./popover";
+export type {
+  PopoverAnchorProps,
+  PopoverArrowProps,
+  PopoverCloseProps,
+  PopoverContentProps,
+  PopoverPortalProps,
+  PopoverProps,
+  PopoverTriggerProps,
+} from "./popover";
+export {
   Tooltip,
   TooltipArrow,
   TooltipContent,

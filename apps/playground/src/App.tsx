@@ -47,6 +47,10 @@ import {
   DropdownMenuSeparator,
   DropdownMenuShortcut,
   DropdownMenuTrigger,
+  Popover,
+  PopoverClose,
+  PopoverContent,
+  PopoverTrigger,
 } from "@ji-design/ui";
 
 export function App() {
@@ -339,6 +343,43 @@ export function App() {
               <TooltipArrow />
             </TooltipContent>
           </Tooltip>
+        </div>
+
+        <Separator />
+
+        {/* Popover */}
+        <div className="preview">
+          <Popover>
+            <PopoverTrigger asChild>
+              <Button variant="outline">필터 설정</Button>
+            </PopoverTrigger>
+            <PopoverContent style={{ width: 260 }}>
+              <PopoverClose />
+              <div className="flex flex-col gap-3" style={{ paddingRight: 20 }}>
+                <p style={{ fontSize: 14, fontWeight: 600 }}>필터</p>
+                <div className="flex flex-col gap-1">
+                  <Label htmlFor="pg-popover-name">이름</Label>
+                  <Input id="pg-popover-name" placeholder="이름 검색" />
+                </div>
+                <div className="flex flex-col gap-1">
+                  <Label htmlFor="pg-popover-country">국가</Label>
+                  <Select
+                    id="pg-popover-country"
+                    options={[
+                      { label: "전체", value: "" },
+                      { label: "대한민국", value: "kr" },
+                      { label: "미국", value: "us" },
+                    ]}
+                    placeholder="전체"
+                  />
+                </div>
+                <div style={{ display: "flex", gap: 8, justifyContent: "flex-end" }}>
+                  <Button variant="outline" size="sm">초기화</Button>
+                  <Button size="sm">적용</Button>
+                </div>
+              </div>
+            </PopoverContent>
+          </Popover>
         </div>
 
         <Separator />
