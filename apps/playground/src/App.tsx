@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { CheckIcon } from "@ji-design/icons";
 import {
   Alert,
@@ -51,10 +52,21 @@ import {
   PopoverClose,
   PopoverContent,
   PopoverTrigger,
+  Toast,
+  ToastAction,
+  ToastClose,
+  ToastDescription,
+  ToastProvider,
+  ToastTitle,
+  ToastViewport,
 } from "@ji-design/ui";
 
 export function App() {
+  const [saveToastOpen, setSaveToastOpen] = useState(false);
+  const [deleteToastOpen, setDeleteToastOpen] = useState(false);
+
   return (
+    <ToastProvider>
     <TooltipProvider>
     <main className="playground">
       <section className="surface">
@@ -412,8 +424,41 @@ export function App() {
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
+
+        <Separator />
+
+        {/* Toast */}
+        <div className="preview">
+          <Button onClick={() => setSaveToastOpen(true)}>저장</Button>
+          <Button variant="outline" onClick={() => setDeleteToastOpen(true)}>
+            삭제
+          </Button>
+        </div>
       </section>
     </main>
     </TooltipProvider>
+
+    {/* Toast 인스턴스는 ToastProvider 바로 아래, ToastViewport와 함께 선언 */}
+    <Toast open={saveToastOpen} onOpenChange={setSaveToastOpen} variant="success">
+      <div style={{ flex: 1 }}>
+        <ToastTitle>저장 완료</ToastTitle>
+        <ToastDescription>변경사항이 성공적으로 저장되었습니다.</ToastDescription>
+      </div>
+      <ToastClose />
+    </Toast>
+
+    <Toast open={deleteToastOpen} onOpenChange={setDeleteToastOpen} variant="destructive">
+      <div style={{ flex: 1 }}>
+        <ToastTitle>삭제 실패</ToastTitle>
+        <ToastDescription>항목을 삭제할 수 없습니다. 다시 시도해주세요.</ToastDescription>
+      </div>
+      <ToastAction altText="다시 시도" onClick={() => setDeleteToastOpen(false)}>
+        다시 시도
+      </ToastAction>
+      <ToastClose />
+    </Toast>
+
+    <ToastViewport />
+    </ToastProvider>
   );
 }

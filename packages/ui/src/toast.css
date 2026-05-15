@@ -1,0 +1,197 @@
+@layer components {
+  /* 화면 오른쪽 하단 고정. 토스트 항목 목록 컨테이너 */
+  .ji-toast__viewport {
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--ji-space-2);
+    list-style: none;
+    margin: 0;
+    max-height: 100dvh;
+    outline: none;
+    padding: var(--ji-space-4);
+    position: fixed;
+    right: 0;
+    width: 400px;
+    z-index: 100;
+  }
+
+  /* 모바일: 화면 하단 전체 폭 */
+  @media (max-width: 640px) {
+    .ji-toast__viewport {
+      left: 0;
+      width: 100%;
+    }
+  }
+
+  .ji-toast {
+    align-items: flex-start;
+    background: var(--ji-color-background);
+    border: 1px solid var(--ji-color-border);
+    border-radius: var(--ji-radius-md);
+    box-shadow: var(--ji-shadow-lg);
+    display: flex;
+    gap: var(--ji-space-3);
+    overflow: hidden;
+    padding: var(--ji-space-4);
+    position: relative;
+    word-break: break-word;
+  }
+
+  /* 오른쪽에서 슬라이드 인 */
+  .ji-toast[data-state="open"] {
+    animation: ji-toast-slide-in 250ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* 오른쪽으로 페이드 아웃 */
+  .ji-toast[data-state="closed"] {
+    animation: ji-toast-fade-out 150ms ease forwards;
+  }
+
+  /* swipe 진행: 손가락 위치로 실시간 이동 */
+  .ji-toast[data-swipe="move"] {
+    transform: translateX(var(--radix-toast-swipe-move-x));
+    transition: none;
+  }
+
+  /* swipe 취소: 원위치로 복귀 */
+  .ji-toast[data-swipe="cancel"] {
+    transform: translateX(0);
+    transition: transform 200ms ease;
+  }
+
+  /* swipe 완료: 오른쪽으로 빠져나감 */
+  .ji-toast[data-swipe="end"] {
+    animation: ji-toast-swipe-out 150ms ease forwards;
+  }
+
+  .ji-toast__title {
+    color: var(--ji-color-foreground);
+    font-size: var(--ji-font-size-sm);
+    font-weight: var(--ji-font-weight-semibold);
+    line-height: var(--ji-line-height-normal);
+  }
+
+  .ji-toast__description {
+    color: var(--ji-color-muted-foreground);
+    font-size: var(--ji-font-size-sm);
+    line-height: var(--ji-line-height-normal);
+    margin-top: var(--ji-space-1);
+  }
+
+  .ji-toast__action {
+    align-self: flex-start;
+    background: transparent;
+    border: 1px solid var(--ji-color-border);
+    border-radius: var(--ji-radius-sm);
+    color: var(--ji-color-foreground);
+    cursor: pointer;
+    flex-shrink: 0;
+    font-size: var(--ji-font-size-sm);
+    font-weight: var(--ji-font-weight-semibold);
+    line-height: var(--ji-line-height-normal);
+    padding: var(--ji-space-1) var(--ji-space-2);
+    transition: background 150ms;
+    white-space: nowrap;
+  }
+
+  .ji-toast__action:hover {
+    background: var(--ji-color-surface-hover);
+  }
+
+  .ji-toast__action:focus-visible {
+    outline: 2px solid var(--ji-color-primary);
+    outline-offset: 2px;
+  }
+
+  .ji-toast__close {
+    align-items: center;
+    align-self: flex-start;
+    background: transparent;
+    border: none;
+    border-radius: var(--ji-radius-sm);
+    color: var(--ji-color-muted-foreground);
+    cursor: pointer;
+    display: inline-flex;
+    flex-shrink: 0;
+    height: 20px;
+    justify-content: center;
+    padding: 0;
+    transition: color 150ms;
+    width: 20px;
+  }
+
+  .ji-toast__close:hover {
+    color: var(--ji-color-foreground);
+  }
+
+  .ji-toast__close:focus-visible {
+    outline: 2px solid var(--ji-color-primary);
+    outline-offset: 2px;
+  }
+
+  /* variant: success */
+  .ji-toast--success {
+    border-color: var(--ji-color-success-border);
+  }
+
+  .ji-toast--success .ji-toast__title {
+    color: var(--ji-color-success);
+  }
+
+  /* variant: warning */
+  .ji-toast--warning {
+    border-color: var(--ji-color-warning-border);
+  }
+
+  .ji-toast--warning .ji-toast__title {
+    color: var(--ji-color-warning);
+  }
+
+  /* variant: destructive */
+  .ji-toast--destructive {
+    border-color: var(--ji-color-destructive-border);
+  }
+
+  .ji-toast--destructive .ji-toast__title {
+    color: var(--ji-color-destructive);
+  }
+
+  @keyframes ji-toast-slide-in {
+    from {
+      opacity: 0;
+      transform: translateX(calc(100% + var(--ji-space-4)));
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes ji-toast-fade-out {
+    from {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateX(calc(100% + var(--ji-space-4)));
+    }
+  }
+
+  @keyframes ji-toast-swipe-out {
+    from {
+      transform: translateX(var(--radix-toast-swipe-end-x));
+    }
+    to {
+      transform: translateX(calc(100% + var(--ji-space-4)));
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ji-toast[data-state],
+    .ji-toast[data-swipe="end"] {
+      animation: none;
+    }
+  }
+}
