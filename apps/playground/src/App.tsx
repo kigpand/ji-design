@@ -1,6 +1,10 @@
 import { useState } from "react";
 import { CheckIcon } from "@ji-design/icons";
 import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
   Alert,
   AlertDescription,
   AlertTitle,
@@ -424,6 +428,34 @@ export function App() {
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
+
+        <Separator />
+
+        {/* Accordion */}
+        <Accordion type="single" collapsible defaultValue="faq-1" style={{ width: "100%", maxWidth: 520 }}>
+          <AccordionItem value="faq-1">
+            <AccordionTrigger>배송은 얼마나 걸리나요?</AccordionTrigger>
+            <AccordionContent>
+              일반 배송은 3~5 영업일, 빠른 배송은 1~2 영업일이 소요됩니다.
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="faq-2">
+            <AccordionTrigger>반품 정책은 어떻게 되나요?</AccordionTrigger>
+            <AccordionContent>
+              수령일로부터 7일 이내에 반품을 신청할 수 있습니다. 단, 개봉된 상품이나 사용 흔적이 있는 경우 반품이 제한될 수 있습니다.
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="faq-3">
+            <AccordionTrigger>결제 수단에는 어떤 것이 있나요?</AccordionTrigger>
+            <AccordionContent>
+              신용카드, 체크카드, 계좌이체, 간편결제(카카오페이, 네이버페이, 토스)를 지원합니다.
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="faq-4" disabled>
+            <AccordionTrigger>해외 배송이 가능한가요? (준비 중)</AccordionTrigger>
+            <AccordionContent>현재는 국내 배송만 지원합니다.</AccordionContent>
+          </AccordionItem>
+        </Accordion>
 
         <Separator />
 

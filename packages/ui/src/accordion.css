@@ -1,0 +1,111 @@
+@layer components {
+  .ji-accordion {
+    width: 100%;
+  }
+
+  .ji-accordion__item {
+    border-bottom: 1px solid var(--ji-color-border);
+  }
+
+  .ji-accordion__item:first-child {
+    border-top: 1px solid var(--ji-color-border);
+  }
+
+  /* Radix Header는 h3으로 렌더되므로 기본 margin/padding 초기화 */
+  .ji-accordion__header {
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+
+  .ji-accordion__trigger {
+    align-items: center;
+    background: transparent;
+    border: none;
+    color: var(--ji-color-foreground);
+    cursor: pointer;
+    display: flex;
+    flex: 1;
+    font-size: var(--ji-font-size-sm);
+    font-weight: var(--ji-font-weight-semibold);
+    justify-content: space-between;
+    line-height: var(--ji-line-height-normal);
+    outline: none;
+    padding: var(--ji-space-4) 0;
+    text-align: left;
+    transition: color 150ms;
+  }
+
+  .ji-accordion__trigger:hover:not([data-disabled]) {
+    color: var(--ji-color-primary);
+  }
+
+  .ji-accordion__trigger:focus-visible {
+    outline: 2px solid var(--ji-color-primary);
+    outline-offset: 2px;
+    border-radius: var(--ji-radius-sm);
+  }
+
+  .ji-accordion__trigger[data-disabled] {
+    cursor: not-allowed;
+    opacity: 0.4;
+  }
+
+  /* 열림 상태에서 chevron 180도 회전 */
+  .ji-accordion__chevron {
+    color: var(--ji-color-muted-foreground);
+    flex-shrink: 0;
+    transition: transform 200ms ease;
+  }
+
+  .ji-accordion__trigger[data-state="open"] .ji-accordion__chevron {
+    transform: rotate(180deg);
+  }
+
+  .ji-accordion__content {
+    overflow: hidden;
+  }
+
+  .ji-accordion__content[data-state="open"] {
+    animation: ji-accordion-open 200ms ease;
+  }
+
+  .ji-accordion__content[data-state="closed"] {
+    animation: ji-accordion-close 200ms ease;
+  }
+
+  .ji-accordion__content-inner {
+    color: var(--ji-color-muted-foreground);
+    font-size: var(--ji-font-size-sm);
+    line-height: var(--ji-line-height-normal);
+    padding-bottom: var(--ji-space-4);
+  }
+
+  @keyframes ji-accordion-open {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+
+  @keyframes ji-accordion-close {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ji-accordion__content[data-state] {
+      animation: none;
+    }
+
+    .ji-accordion__chevron {
+      transition: none;
+    }
+  }
+}

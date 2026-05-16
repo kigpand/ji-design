@@ -1,3 +1,15 @@
+export {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "./accordion";
+export type {
+  AccordionContentProps,
+  AccordionItemProps,
+  AccordionProps,
+  AccordionTriggerProps,
+} from "./accordion";
 export { Alert, AlertDescription, AlertTitle } from "./alert";
 export type { AlertDescriptionProps, AlertProps, AlertTitleProps } from "./alert";
 export {
