@@ -137,6 +137,8 @@ export type {
   ToastTitleProps,
   ToastViewportProps,
 } from "./toast";
+export { Progress } from "./progress";
+export type { ProgressProps } from "./progress";
 export {
   Popover,
   PopoverAnchor,

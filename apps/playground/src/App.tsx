@@ -6,6 +6,7 @@ import {
   AccordionItem,
   AccordionTrigger,
   Alert,
+  Progress,
   AlertDescription,
   AlertTitle,
   Badge,
@@ -456,6 +457,32 @@ export function App() {
             <AccordionContent>현재는 국내 배송만 지원합니다.</AccordionContent>
           </AccordionItem>
         </Accordion>
+
+        <Separator />
+
+        {/* Progress */}
+        <div className="flex flex-col gap-3" style={{ maxWidth: 480, width: "100%" }}>
+          <div className="flex flex-col gap-1">
+            <span style={{ color: "var(--ji-color-muted-foreground)", fontSize: 13 }}>업로드 진행 중</span>
+            <Progress value={65} showValue />
+          </div>
+          <div className="flex flex-col gap-1">
+            <span style={{ color: "var(--ji-color-muted-foreground)", fontSize: 13 }}>저장 완료</span>
+            <Progress value={100} variant="success" showValue />
+          </div>
+          <div className="flex flex-col gap-1">
+            <span style={{ color: "var(--ji-color-muted-foreground)", fontSize: 13 }}>저장 공간 부족 (경고)</span>
+            <Progress value={88} variant="warning" showValue />
+          </div>
+          <div className="flex flex-col gap-1">
+            <span style={{ color: "var(--ji-color-muted-foreground)", fontSize: 13 }}>업로드 실패</span>
+            <Progress value={40} variant="destructive" showValue />
+          </div>
+          <div className="flex flex-col gap-1">
+            <span style={{ color: "var(--ji-color-muted-foreground)", fontSize: 13 }}>불러오는 중...</span>
+            <Progress value={null} />
+          </div>
+        </div>
 
         <Separator />
 
