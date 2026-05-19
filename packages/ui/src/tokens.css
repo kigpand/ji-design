@@ -1,0 +1,74 @@
+/* Ji Design 토큰 — packages/styles/src/variables.css + reset.css를 ui에 인라인으로 포함
+   외부 소비자가 @ji-design/styles를 별도 설치하지 않아도 styles.css 하나로 동작한다. */
+
+/* ─── Reset ───────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+/* ─── CSS Variables ────────────────────────────────────── */
+:root {
+  /* color */
+  --ji-color-background: #ffffff;
+  --ji-color-foreground: #171717;
+  --ji-color-primary: #2563eb;
+  --ji-color-primary-hover: #1d4ed8;
+  --ji-color-primary-foreground: #ffffff;
+  --ji-color-border: #d4d4d8;
+  --ji-color-surface-hover: #f4f4f5;
+  --ji-color-muted: #f4f4f5;
+  --ji-color-muted-foreground: #71717a;
+  --ji-color-destructive: #dc2626;
+  --ji-color-destructive-foreground: #ffffff;
+  --ji-color-destructive-surface: #fef2f2;
+  --ji-color-destructive-border: #fecaca;
+  --ji-color-success: #16a34a;
+  --ji-color-success-foreground: #ffffff;
+  --ji-color-success-surface: #f0fdf4;
+  --ji-color-success-border: #bbf7d0;
+  --ji-color-warning: #d97706;
+  --ji-color-warning-foreground: #ffffff;
+  --ji-color-warning-surface: #fffbeb;
+  --ji-color-warning-border: #fde68a;
+  --ji-color-info-surface: #eff6ff;
+  --ji-color-info-border: #bfdbfe;
+
+  /* space */
+  --ji-space-1: 4px;
+  --ji-space-2: 8px;
+  --ji-space-3: 12px;
+  --ji-space-4: 16px;
+  --ji-space-6: 24px;
+
+  /* radius */
+  --ji-radius-sm: 4px;
+  --ji-radius-md: 6px;
+  --ji-radius-lg: 8px;
+
+  /* typography */
+  --ji-font-sans: ui-sans-serif, system-ui, sans-serif;
+  --ji-font-size-sm: 14px;
+  --ji-font-size-md: 16px;
+  --ji-font-size-lg: 18px;
+  --ji-font-weight-normal: 400;
+  --ji-font-weight-semibold: 600;
+  --ji-line-height-normal: 1.5;
+
+  /* shadow */
+  --ji-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --ji-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --ji-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}

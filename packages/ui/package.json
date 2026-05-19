@@ -1,8 +1,23 @@
 {
   "name": "@ji-design/ui",
-  "version": "0.0.0",
-  "private": true,
+  "version": "0.1.0",
+  "private": false,
+  "description": "Ji Design System — React UI components",
+  "license": "MIT",
+  "keywords": [
+    "design-system",
+    "ui",
+    "react",
+    "components",
+    "ji-design"
+  ],
   "type": "module",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "files": [
+    "dist"
+  ],
   "exports": {
     ".": "./src/index.ts",
     "./accordion": "./src/accordion.tsx",
@@ -15,24 +30,139 @@
     "./dropdown-menu": "./src/dropdown-menu.tsx",
     "./input": "./src/input.tsx",
     "./label": "./src/label.tsx",
+    "./popover": "./src/popover.tsx",
+    "./progress": "./src/progress.tsx",
     "./radio": "./src/radio.tsx",
     "./radio-group": "./src/radio-group.tsx",
     "./select": "./src/select.tsx",
-    "./textarea": "./src/textarea.tsx",
     "./separator": "./src/separator.tsx",
     "./skeleton": "./src/skeleton.tsx",
     "./spinner": "./src/spinner.tsx",
     "./switch": "./src/switch.tsx",
     "./tabs": "./src/tabs.tsx",
+    "./textarea": "./src/textarea.tsx",
     "./toast": "./src/toast.tsx",
-    "./popover": "./src/popover.tsx",
-    "./progress": "./src/progress.tsx",
     "./tooltip": "./src/tooltip.tsx",
     "./styles.css": "./src/styles.css"
   },
+  "publishConfig": {
+    "exports": {
+      ".": {
+        "types": "./dist/index.d.ts",
+        "import": "./dist/index.js"
+      },
+      "./accordion": {
+        "types": "./dist/accordion.d.ts",
+        "import": "./dist/accordion.js"
+      },
+      "./alert": {
+        "types": "./dist/alert.d.ts",
+        "import": "./dist/alert.js"
+      },
+      "./badge": {
+        "types": "./dist/badge.d.ts",
+        "import": "./dist/badge.js"
+      },
+      "./button": {
+        "types": "./dist/button.d.ts",
+        "import": "./dist/button.js"
+      },
+      "./card": {
+        "types": "./dist/card.d.ts",
+        "import": "./dist/card.js"
+      },
+      "./checkbox": {
+        "types": "./dist/checkbox.d.ts",
+        "import": "./dist/checkbox.js"
+      },
+      "./dialog": {
+        "types": "./dist/dialog.d.ts",
+        "import": "./dist/dialog.js"
+      },
+      "./dropdown-menu": {
+        "types": "./dist/dropdown-menu.d.ts",
+        "import": "./dist/dropdown-menu.js"
+      },
+      "./input": {
+        "types": "./dist/input.d.ts",
+        "import": "./dist/input.js"
+      },
+      "./label": {
+        "types": "./dist/label.d.ts",
+        "import": "./dist/label.js"
+      },
+      "./popover": {
+        "types": "./dist/popover.d.ts",
+        "import": "./dist/popover.js"
+      },
+      "./progress": {
+        "types": "./dist/progress.d.ts",
+        "import": "./dist/progress.js"
+      },
+      "./radio": {
+        "types": "./dist/radio.d.ts",
+        "import": "./dist/radio.js"
+      },
+      "./radio-group": {
+        "types": "./dist/radio-group.d.ts",
+        "import": "./dist/radio-group.js"
+      },
+      "./select": {
+        "types": "./dist/select.d.ts",
+        "import": "./dist/select.js"
+      },
+      "./separator": {
+        "types": "./dist/separator.d.ts",
+        "import": "./dist/separator.js"
+      },
+      "./skeleton": {
+        "types": "./dist/skeleton.d.ts",
+        "import": "./dist/skeleton.js"
+      },
+      "./spinner": {
+        "types": "./dist/spinner.d.ts",
+        "import": "./dist/spinner.js"
+      },
+      "./switch": {
+        "types": "./dist/switch.d.ts",
+        "import": "./dist/switch.js"
+      },
+      "./tabs": {
+        "types": "./dist/tabs.d.ts",
+        "import": "./dist/tabs.js"
+      },
+      "./textarea": {
+        "types": "./dist/textarea.d.ts",
+        "import": "./dist/textarea.js"
+      },
+      "./toast": {
+        "types": "./dist/toast.d.ts",
+        "import": "./dist/toast.js"
+      },
+      "./tooltip": {
+        "types": "./dist/tooltip.d.ts",
+        "import": "./dist/tooltip.js"
+      },
+      "./styles.css": "./dist/styles.css"
+    }
+  },
   "scripts": {
+    "build": "tsup",
     "lint": "eslint . --max-warnings 0",
     "check-types": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "dependencies": {
+    "@radix-ui/react-accordion": "^1.2.4",
+    "@radix-ui/react-dialog": "^1.1.4",
+    "@radix-ui/react-dropdown-menu": "^2.1.4",
+    "@radix-ui/react-popover": "^1.1.4",
+    "@radix-ui/react-progress": "^1.1.4",
+    "@radix-ui/react-toast": "^1.2.4",
+    "@radix-ui/react-tooltip": "^1.1.4"
   },
   "devDependencies": {
     "@ji-design/eslint-config": "workspace:*",
@@ -43,17 +173,7 @@
     "@types/react": "19.2.2",
     "@types/react-dom": "19.2.2",
     "eslint": "^9.39.1",
+    "tsup": "^8.5.1",
     "typescript": "5.9.2"
-  },
-  "dependencies": {
-    "@radix-ui/react-accordion": "^1.2.4",
-    "@radix-ui/react-dialog": "^1.1.4",
-    "@radix-ui/react-dropdown-menu": "^2.1.4",
-    "@radix-ui/react-popover": "^1.1.4",
-    "@radix-ui/react-progress": "^1.1.4",
-    "@radix-ui/react-toast": "^1.2.4",
-    "@radix-ui/react-tooltip": "^1.1.4",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0"
   }
 }
